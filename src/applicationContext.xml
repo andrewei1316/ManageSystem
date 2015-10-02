@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+
+	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/managesystem"/>
+		<property name="username" value="root"/>
+		<property name="password" value=""/>
+	</bean>
+	
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="EventDAO" class="com.manageSystem.dao.EventDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MapDAO" class="com.manageSystem.dao.MapDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.manageSystem.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id = "UserService" class = "com.manageSystem.service.impl.UserServiceImpl">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+	<bean id = "MapService" class = "com.manageSystem.service.impl.MapServiceImpl">
+		<property name="mapDao">
+			<ref bean="MapDAO" />
+		</property>
+	</bean>
+	<bean id = "EventService" class = "com.manageSystem.service.impl.EventServiceImpl">
+		<property name="eventDao">
+			<ref bean="EventDAO" />
+		</property>
+	</bean>
+	
+	<bean id = "PagerService" class = "com.manageSystem.service.impl.PagerServiceImpl">
+	</bean>
+	
+	</beans>
