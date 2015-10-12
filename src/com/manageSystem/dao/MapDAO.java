@@ -1,13 +1,11 @@
 package com.manageSystem.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +13,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.manageSystem.po.Map;
-import com.manageSystem.util.HibernateSessionFactory;
 
 /**
  * A data access object (DAO) providing persistence and search support for Map
@@ -166,29 +163,6 @@ public class MapDAO {
 			log.error("attach failed", re);
 			throw re;
 		}
-	}
-	
-	public HashMap<Integer, String> queryMap() {
-		// TODO 自动生成的方法存根
-		Session session = HibernateSessionFactory.getSession();
-		Transaction tr = session.beginTransaction();
-		HashMap<Integer, String> map = new HashMap<Integer, String>();
-		List<com.manageSystem.po.Map> list = null;
-		try{
-			Query query = session.createQuery("from Map");
-			list = (List<com.manageSystem.po.Map>)query.list();
-			tr.commit();
-			for(int i = 0; i < list.size(); i++){
-	    		map.put(list.get(i).getFid(), list.get(i).getFname());
-	    	}
-		}catch(Exception ex){
-			if(tr != null){
-				tr.rollback();
-			}
-		}finally{
-			session.close();
-		}
-		return map;
 	}
 
 	public static MapDAO getFromApplicationContext(ApplicationContext ctx) {

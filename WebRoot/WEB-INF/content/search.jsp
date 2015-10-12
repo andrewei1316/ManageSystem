@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      <button type = "button" id= "Custom" name = "Custom" onclick = "Custom()">自定义显示</button>
-	<form id = "FuzzySearchForm" name = "FuzzySearchForm" action = "FuzSearchEvent" method = "get">
+	<form id = "FuzzySearchForm" name = "FuzzySearchForm" action = "FuzSearchEvent" method = "post">
 		<input type = "text" id = "FuzzySearchKeys" name = "FuzzySearchKeys"  placeholder="关键字可以用空格隔开"/><input type = "submit" id = "subFuzzySearch" name = "subFuzzySearch" value = "模糊搜索"/>	
 	</form>
 	<button type = "button" id= "PreSearch" name = "PreSearch" onclick = "showPreSearch()">精确搜索</button>

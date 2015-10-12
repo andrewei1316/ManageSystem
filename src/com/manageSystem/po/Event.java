@@ -13,6 +13,7 @@ public class Event implements java.io.Serializable {
 	private String actionable;
 	private String customercode;
 	private String zprocessstate;
+	private String cause;
 	private String resolutioncode;
 	private String class_;
 	private String zbnotifystate;
@@ -63,8 +64,8 @@ public class Event implements java.io.Serializable {
 
 	/** full constructor */
 	public Event(String ipccustomer, String actionable, String customercode,
-			String zprocessstate, String resolutioncode, String class_,
-			String zbnotifystate, String resourcetype,
+			String zprocessstate, String cause, String resolutioncode,
+			String class_, String zbnotifystate, String resourcetype,
 			String zgenericactionstate, String ibmmanaged,
 			String zhnotifystate, String lastupdate, String summary,
 			String componenttype, String customer, String ostype, String poll,
@@ -81,6 +82,7 @@ public class Event implements java.io.Serializable {
 		this.actionable = actionable;
 		this.customercode = customercode;
 		this.zprocessstate = zprocessstate;
+		this.cause = cause;
 		this.resolutioncode = resolutioncode;
 		this.class_ = class_;
 		this.zbnotifystate = zbnotifystate;
@@ -164,6 +166,14 @@ public class Event implements java.io.Serializable {
 
 	public void setZprocessstate(String zprocessstate) {
 		this.zprocessstate = zprocessstate;
+	}
+
+	public String getCause() {
+		return this.cause;
+	}
+
+	public void setCause(String cause) {
+		this.cause = cause;
 	}
 
 	public String getResolutioncode() {

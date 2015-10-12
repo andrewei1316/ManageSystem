@@ -95,7 +95,6 @@ public class SearchAbout {
     		String[] Keys = preSearchKeys.split(",");
         	for(int i= 0; i < Keys.length; i++){
         		String[] value = Keys[i].split(":");
-        		if(value[0].equals("CLASS_")) value[0] = "CLASS";
         		searchMap.put(value[0], value[1]);
         	}
     	}

@@ -69,17 +69,6 @@ public class UserDAO {
 			throw re;
 		}
 	}
-	
-	public void update(User user){
-		log.debug("update User");
-		try{
-			getCurrentSession().update(user);
-			log.debug("update successful");
-		}catch(RuntimeException re){
-			log.error("update fail", re);
-			throw re;
-		}
-	}
 
 	public User findById(java.lang.Integer id) {
 		log.debug("getting User instance with id: " + id);

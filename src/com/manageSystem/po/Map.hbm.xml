@@ -8,7 +8,7 @@
     <class name="com.manageSystem.po.Map" table="map" catalog="managesystem">
         <id name="mapId" type="java.lang.Integer">
             <column name="mapId" />
-            <generator class="native" />
+            <generator class="identity" />
         </id>
         <property name="fid" type="java.lang.Integer">
             <column name="fid" />

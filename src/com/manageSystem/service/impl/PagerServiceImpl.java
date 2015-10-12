@@ -1,8 +1,11 @@
 package com.manageSystem.service.impl;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.manageSystem.service.PagerService;
 import com.manageSystem.util.Pager;
 
+@Transactional
 public class PagerServiceImpl implements PagerService {
 
 	@Override

@@ -8,7 +8,7 @@
     <class name="com.manageSystem.po.Event" table="event" catalog="managesystem">
         <id name="eventId" type="java.lang.Integer">
             <column name="eventId" />
-            <generator class="native" />
+            <generator class="identity" />
         </id>
         <property name="ipccustomer" type="java.lang.String">
             <column name="IPCCUSTOMER" length="65535" />
@@ -22,11 +22,14 @@
         <property name="zprocessstate" type="java.lang.String">
             <column name="ZPROCESSSTATE" length="65535" />
         </property>
+        <property name="cause" type="java.lang.String">
+            <column name="CAUSE" length="65535" />
+        </property>
         <property name="resolutioncode" type="java.lang.String">
             <column name="RESOLUTIONCODE" length="65535" />
         </property>
         <property name="class_" type="java.lang.String">
-            <column name="CLASS" length="65535" />
+            <column name="CLASS_" length="65535" />
         </property>
         <property name="zbnotifystate" type="java.lang.String">
             <column name="ZBNOTIFYSTATE" length="65535" />

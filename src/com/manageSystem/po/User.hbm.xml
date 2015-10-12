@@ -8,7 +8,7 @@
     <class name="com.manageSystem.po.User" table="user" catalog="managesystem">
         <id name="userId" type="java.lang.Integer">
             <column name="userId" />
-            <generator class="native" />
+            <generator class="identity" />
         </id>
         <property name="userLogId" type="java.lang.String">
             <column name="userLogId" length="20" />
@@ -20,7 +20,7 @@
             <column name="userPsw" length="20" />
         </property>
         <property name="userSettings" type="java.lang.String">
-            <column name="userSettings" length="150" />
+            <column name="userSettings" length="50" />
         </property>
     </class>
 </hibernate-mapping>

@@ -36,6 +36,7 @@ public class EventDAO {
 	public static final String ACTIONABLE = "actionable";
 	public static final String CUSTOMERCODE = "customercode";
 	public static final String ZPROCESSSTATE = "zprocessstate";
+	public static final String CAUSE = "cause";
 	public static final String RESOLUTIONCODE = "resolutioncode";
 	public static final String CLASS_ = "class_";
 	public static final String ZBNOTIFYSTATE = "zbnotifystate";
@@ -170,6 +171,10 @@ public class EventDAO {
 
 	public List findByZprocessstate(Object zprocessstate) {
 		return findByProperty(ZPROCESSSTATE, zprocessstate);
+	}
+
+	public List findByCause(Object cause) {
+		return findByProperty(CAUSE, cause);
 	}
 
 	public List findByResolutioncode(Object resolutioncode) {
@@ -398,7 +403,6 @@ public class EventDAO {
 	        {
 				if(flag) queryString = queryString + " and ";
 	            String s1 = (String)iterator.next();
-	            //String s2 = (String)map.get(s1);
 	            queryString = queryString + "event." +s1 +" like ?";
 	            flag = true;
 	        }
@@ -424,7 +428,7 @@ public class EventDAO {
 			String queryString = "select * from event";
 			String keys[] = key.split(" +");
 			int keySize = keys.length;
-			String tmp = " concat(IPCCUSTOMER, ACTIONABLE, CUSTOMERCODE, ZPROCESSSTATE, RESOLUTIONCODE, CLASS, ZBNOTIFYSTATE, RESOURCETYPE, ZGENERICACTIONSTATE, IBMMANAGED, ZHNOTIFYSTATE, LASTUPDATE, SUMMARY, COMPONENTTYPE, CUSTOMER, OSTYPE, POLL, EXPIRETIME, PROCESSREQ, TYPE, TASKLIST, TICKETSTATUS, SERIAL, LASTOCCURRENCE, ACKNOWLEDGED, ZTICKETSEVERITY, ZTICKETSTATE, NODE, RESOLUTION, OWNERGID, TARGETIPMS, ALERTKEY, SUPPRESSESCL, FLASH, SERVERNAME, ALERTGROUP, TALLY, SERVERSERIAL, GRADE, OWNERUID, COMPONENT, TICKETNUMBER, FIRSTOCCURRENCE, SEVERITY, ORIGINALSEVERITY) like ";
+			String tmp = " concat(IPCCUSTOMER, CAUSE, ACTIONABLE, CUSTOMERCODE, ZPROCESSSTATE, RESOLUTIONCODE, CLASS_, ZBNOTIFYSTATE, RESOURCETYPE, ZGENERICACTIONSTATE, IBMMANAGED, ZHNOTIFYSTATE, LASTUPDATE, SUMMARY, COMPONENTTYPE, CUSTOMER, OSTYPE, POLL, EXPIRETIME, PROCESSREQ, TYPE, TASKLIST, TICKETSTATUS, SERIAL, LASTOCCURRENCE, ACKNOWLEDGED, ZTICKETSEVERITY, ZTICKETSTATE, NODE, RESOLUTION, OWNERGID, TARGETIPMS, ALERTKEY, SUPPRESSESCL, FLASH, SERVERNAME, ALERTGROUP, TALLY, SERVERSERIAL, GRADE, OWNERUID, COMPONENT, TICKETNUMBER, FIRSTOCCURRENCE, SEVERITY, ORIGINALSEVERITY) like ";
 			if(keySize > 0){
 				queryString = queryString + " where ";
 				boolean flag = false;
