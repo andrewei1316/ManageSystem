@@ -1,5 +1,6 @@
 package com.manageSystem.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -403,7 +404,7 @@ public class EventDAO {
 	        {
 				if(flag) queryString = queryString + " and ";
 	            String s1 = (String)iterator.next();
-	            queryString = queryString + "event." +s1 +" like ?";
+	            queryString = queryString + "event." +s1 +" = ?";
 	            flag = true;
 	        }
 			Query queryObject = getCurrentSession().createSQLQuery(queryString).addEntity(Event.class);
@@ -440,6 +441,31 @@ public class EventDAO {
 			}
 			Query queryObject = getCurrentSession().createSQLQuery(queryString).addEntity(Event.class);
 			return queryObject.list();
+		}catch (RuntimeException re) {
+			log.error("find by FuzSearchKeys name failed", re);
+			throw re;
+		}
+	}
+	
+	public List<Event> FuzzyQueryEvent1(String key) {
+		log.debug("find by FuzSearchKeys");
+		try{
+			List<Event> allEventList = findAll();
+			List<Event> ansList = new ArrayList<Event>();
+			String keys[] = key.split(" +");
+			int keySize = keys.length;
+			if(keySize > 0){
+				int size = allEventList.size();
+				for(int i = 0; i < size; i++){
+					String attriValue[] = allEventList.get(i).toString().split(", ");
+					for(int j = 0; j < attriValue.length; j++){	
+						String value = attriValue[j].split("=")[1];
+						int opNum = 0;
+						/////////  »¹Ã»Ð´Íê
+					}
+				}
+			}
+			return ansList;
 		}catch (RuntimeException re) {
 			log.error("find by FuzSearchKeys name failed", re);
 			throw re;

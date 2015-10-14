@@ -24,7 +24,8 @@
 	包括 ：js、css、img、..
 	 -->
 	<mvc:resources location="resources/JS/" mapping="resources/JS/*"/>
-	
+	<mvc:resources location="resources/CSS/" mapping="resources/CSS/*"/>
+	<mvc:resources location="resources/fonts/" mapping="resources/fonts/*"/>
 	<mvc:annotation-driven ></mvc:annotation-driven>
 	
 	

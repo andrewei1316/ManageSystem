@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'search.jsp' starting page</title>
+    <title>查找</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,14 +21,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link rel="stylesheet" type = "text/css" href="resources/CSS/bootstrap-table.css">
+	<link rel="stylesheet" type = "text/css" href="resources/CSS/bootstrap.min.css">
+		<link rel="stylesheet" type = "text/css" href="resources/CSS/jquery.bdt.min.css">
+		<link rel="stylesheet" type = "text/css" href="resources/CSS/jquery.bdt.css">
+				<link rel="stylesheet" type = "text/css" href="resources/CSS/font-awesome.min.css">
+	
 	<script type = "text/javascript" src="resources/JS/jquery.js"></script>  
 	<script type = "text/javascript" src="resources/JS/sortTable.js"></script>
     <script type = "text/javascript" src="resources/JS/jquery.tablednd.js"></script>  
+    <script type = "text/javascript" src="resources/JS/bootstrap-table.js"></script>  
+    <script type = "text/javascript" src="resources/JS/bootstrap.min.js"></script>
+    <script type = "text/javascript" src="resources/JS/jquery.bdt.js"></script>
+    <script type = "text/javascript" src="resources/JS/jquery.sortelements.js"></script>
+    
+    
     
 	<script language = "javascript">
  		 function showPreSearch(){
-  		 	if(document.getElementById("setHidden").style.display == "none") $("#setHidden").show();
-  			else $("#setHidden").hide();
+ 			window.open ('InputKeys', '自定义显示设置', 'height=600, width=1000, top=0, left=0, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=yes, status=no');
   		}
   	</script>
   
@@ -46,29 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		}
 		};
 	</script>
-	
-	<script type="text/javascript">
-		function spliPreSearchKeys(){
-			 var texts=document.getElementById("PreSearchForm").getElementsByTagName("input");
-			 str = "";
-             for(var i=0;i<texts.length;i++){
-                if(texts[i].type=="text"){
-                	if(texts[i].value != ""){
-                    	str = str + texts[i].name + ":" + texts[i].value +",";
-                	}
-                }
-            }
-            PreSearchForm.preSearchKeys.value = str;
-            return true;
-         }
-	</script>
-  	
-  	<style>  
-    	.tDnD_whileDrag,table.tablednd tbody tr:hover {  
-        	background-color: #eee;  
-    	}	  
-    </style> 
-  </head>
+  	</head>
   
   <body>
      <button type = "button" id= "Custom" name = "Custom" onclick = "Custom()">自定义显示</button>
@@ -76,26 +65,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<input type = "text" id = "FuzzySearchKeys" name = "FuzzySearchKeys"  placeholder="关键字可以用空格隔开"/><input type = "submit" id = "subFuzzySearch" name = "subFuzzySearch" value = "模糊搜索"/>	
 	</form>
 	<button type = "button" id= "PreSearch" name = "PreSearch" onclick = "showPreSearch()">精确搜索</button>
-	<div id = "setHidden" style = "display: none">
-	<form id = "PreSearchForm" name = "PreSearchForm" action = "PreSearchEvent" method = "post">
-		<table border='1'> <tr> <td>字段</td><td>值</td> <td>字段</td><td>值</td> <td>字段</td><td>值</td> </tr>
-		<c:forEach items = "${attriList }" var = "attriList" varStatus = "status">
-			<c:if test = "${status.index == 0 }"> <tr> </c:if>
-			<c:if test = "${status.index != 0 && status.index % 3 == 0 }"> </tr><tr></c:if>
-			<td>${attriList }</td> <td><input name = "${attriList}" id = "${attriList }" type = "text"/> </td>
-			<c:if test = "${status.index == 44 }"> </tr> </c:if>
-		</c:forEach>
-		</table>
-		<input id = "preSearchKeys" name = "preSearchKeys" type = "hidden"/>
-		<input type = "submit" value = "提交" onclick = "return spliPreSearchKeys()"/>
-	</form>
-	</div>
-	
-	<table id = 'EventData' border='1'> 
+	<table class = "table table-hover" id = "EventData">
 	<thead>
 		<tr> <td>行号</td>
 		<c:forEach items = "${attriList }" var = "attriList" varStatus = "status" end = "${showNum - 1 }">
-			<th onclick = "$.sortTable.sort('EventData', ${status.index} )" > ${attriList } </th>
+			<th onclick = "$.sortTable.sort('EventData', ${status.count} )" > ${attriList } </th>
 		</c:forEach>
 		</tr>
 	</thead>
@@ -107,6 +81,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</c:forEach>
 			</tr>
 		</c:forEach>
+	</tbody>
 	</table>
+	<script>
+    $(document).ready( function () {
+        $('#EventData').bdt();
+    });
+</script>
   </body>
 </html>
