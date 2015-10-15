@@ -4,14 +4,13 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>查找</title>
+    <title>輸入查找的字段值</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -35,54 +34,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type = "text/javascript" src="resources/JS/jquery.bdt.js"></script>
     <script type = "text/javascript" src="resources/JS/jquery.sortelements.js"></script>
     
-    
-    
-	<script language = "javascript">
- 		 function showPreSearch(){
- 			window.open ('InputKeys', '自定义显示设置', 'height=600, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=yes, status=no');
-  		}
-  	</script>
-  
-  	<script language = "javascript">
-  		function Custom(){
-  			window.open ('Setting', '自定义显示设置', 'height=600, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=yes, status=no');
-  		}
-  	</script>
-  
-  	<script language="javascript" type="text/javascript">
-		window.onload = function(){
-    		var oTable = document.getElementById("bbsTab");
-    		for(var i=0;i<oTable.rows.length;i++){
-        		oTable.rows[i].cells[0].innerHTML = (i+1);
-    		}
-		};
+	<script type="text/javascript">
+		function spliPreSearchKeys(){
+			 var texts=document.getElementById("PreSearchForm").getElementsByTagName("input");
+			 str = "";
+             for(var i=0;i<texts.length;i++){
+                if(texts[i].type=="text"){
+                	if(texts[i].value != ""){
+                    	str = str + texts[i].name + ":" + texts[i].value +",";
+                	}
+                }
+            }
+            PreSearchForm.preSearchKeys.value = str;
+            return true;
+         }
 	</script>
-  	</head>
+  </head>
   
   <body>
-     <button type = "button" id= "Custom" name = "Custom" onclick = "Custom()">自定义显示</button>
-	<form id = "FuzzySearchForm" name = "FuzzySearchForm" action = "FuzSearchEvent" method = "post">
-		<input type = "text" id = "FuzzySearchKeys" name = "FuzzySearchKeys"  placeholder="关键字可以用空格隔开"/><input type = "submit" id = "subFuzzySearch" name = "subFuzzySearch" value = "模糊搜索"/>	
-	</form>
-	<button type = "button" id= "PreSearch" name = "PreSearch" onclick = "showPreSearch()">精确搜索</button>
-	<table class = "table table-hover" id = "EventData">
+    <form id = "PreSearchForm" name = "PreSearchForm" action = "PreSearchEvent" method = "post">
+
+<table class = "table table-hover" id = "EventData">
 	<thead>
-		<tr> <th>行号</th>
-		<c:forEach items = "${attriList }" var = "attriList" varStatus = "status" end = "${showNum - 1 }">
-			<th onclick = "$.sortTable.sort('EventData', ${status.count} )" > ${attriList } </th>
-		</c:forEach>
-		</tr>
+		<tr> <th>行号</th><th>字段</th><th>值</th></tr>
 	</thead>
 	<tbody id = "bbsTab">
-		<c:forEach items = "${allEventList }" var = "event">
-			<tr> <td></td>
-			<c:forEach items = "${attriList }" var = "attriList" end = "${showNum - 1 }">
-				<td>${event[fn:toLowerCase(attriList)]}</td>
-			</c:forEach>
-			</tr>
+		<c:forEach items = "${attriList }" var = "attriList" varStatus = "status">
+			<tr><td> ${attriList } </td> <td> <input type = "text" id = "${attriList }" name = "${attriList }"/></td></tr>
 		</c:forEach>
 	</tbody>
 	</table>
+		<input id = "preSearchKeys" name = "preSearchKeys" type = "hidden"/>
+		<input type = "submit" value = "提交" onclick = "return spliPreSearchKeys()"/>
+	</form>
 	<script>
     $(document).ready( function () {
         $('#EventData').bdt();
