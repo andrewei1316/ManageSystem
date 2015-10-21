@@ -21,12 +21,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<script type = "text/javascript">
 		function search(){
-			window.location.href ="Events"
+			window.location.href ="Events";
+		}
+		
+		function motify(){
+			window.location.href ="MotifyUser";
+		}
+		
+		function showUser(){
+			window.location.href ="ShowUser";
+		}
+		
+		function logOut(){
+			window.location.href ="LogOut";
 		}
 	</script>
   </head>
   
   <body>
     	<button id = "search" name = "search" onclick = "return search()">搜索</button>
+    	<button id = "motify" name = "motify" onclick = "return motify()">修改用户信息</button>
+    	<button id = "addUser" name = "addUser" onclick = "return showUser()">管理员管理</button>
+    	<button id = "LogOut" name = "logOut" onclick = "return logOut()">退出</button>
   </body>
 </html>

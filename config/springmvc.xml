@@ -48,6 +48,14 @@
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		
 	</bean>
+	
+	<!-- 拦截器，用于检验 session -->
+	<mvc:interceptors>  
+    <mvc:interceptor>  
+        <mvc:mapping path="/*"/>  
+        <bean class="com.manageSystem.util.LoginInterceptor" />  
+    </mvc:interceptor>  
+	</mvc:interceptors>  
 		
 	
 </beans>

@@ -35,8 +35,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type = "text/javascript" src="resources/JS/jquery.bdt.js"></script>
     <script type = "text/javascript" src="resources/JS/jquery.sortelements.js"></script>
     
-    
-    
 	<script language = "javascript">
  		 function showPreSearch(){
  			window.open ('InputKeys', '自定义显示设置', 'height=600, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=yes, resizable=yes,location=yes, status=no');
