@@ -461,7 +461,7 @@ public class EventDAO {
 					for(int j = 0; j < attriValue.length; j++){	
 						String value = attriValue[j].split("=")[1];
 						int opNum = 0;
-						/////////  »¹Ã»Ð´Íê
+						/////////  è¿˜æ²¡å†™å®Œ
 					}
 				}
 			}
@@ -471,4 +471,5 @@ public class EventDAO {
 			throw re;
 		}
 	}
+	
 }

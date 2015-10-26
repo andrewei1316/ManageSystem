@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/content/import.jsp=UTF-8
+encoding//WebRoot/WEB-INF/content/importFailed.jsp=UTF-8
+encoding//WebRoot/WEB-INF/content/motifyUser.jsp=UTF-8
+encoding//src/com/manageSystem/controller/MainController.java=UTF-8
+encoding//src/com/manageSystem/dao/EventDAO.java=UTF-8

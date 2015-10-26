@@ -503,37 +503,36 @@ public class Event implements java.io.Serializable {
 	public void setOriginalseverity(String originalseverity) {
 		this.originalseverity = originalseverity;
 	}
-
+	
 	/* 
-	 * 得到的格式为 字段名=值, 字段名=值, ... , 字段名=值;
+	 * 得到的格式为 字段名::::::值,,,,,, 字段名::::::值,,,,,, ... ,,,,,, 字段名::::::值;
 	 */
 	@Override
 	public String toString() {
-		return "ipccustomer=" + ipccustomer + ", actionable=" + actionable
-				+ ", customercode=" + customercode + ", zprocessstate="
-				+ zprocessstate + ", cause=" + cause + ", resolutioncode="
-				+ resolutioncode + ", class_=" + class_ + ", zbnotifystate="
-				+ zbnotifystate + ", resourcetype=" + resourcetype
-				+ ", zgenericactionstate=" + zgenericactionstate
-				+ ", ibmmanaged=" + ibmmanaged + ", zhnotifystate="
-				+ zhnotifystate + ", lastupdate=" + lastupdate + ", summary="
-				+ summary + ", componenttype=" + componenttype + ", customer="
-				+ customer + ", ostype=" + ostype + ", poll=" + poll
-				+ ", expiretime=" + expiretime + ", processreq=" + processreq
-				+ ", type=" + type + ", tasklist=" + tasklist
-				+ ", ticketstatus=" + ticketstatus + ", serial=" + serial
-				+ ", lastoccurrence=" + lastoccurrence + ", acknowledged="
-				+ acknowledged + ", zticketseverity=" + zticketseverity
-				+ ", zticketstate=" + zticketstate + ", node=" + node
-				+ ", resolution=" + resolution + ", ownergid=" + ownergid
-				+ ", targetipms=" + targetipms + ", alertkey=" + alertkey
-				+ ", suppressescl=" + suppressescl + ", flash=" + flash
-				+ ", servername=" + servername + ", alertgroup=" + alertgroup
-				+ ", tally=" + tally + ", serverserial=" + serverserial
-				+ ", grade=" + grade + ", owneruid=" + owneruid
-				+ ", component=" + component + ", ticketnumber=" + ticketnumber
-				+ ", firstoccurrence=" + firstoccurrence + ", severity="
-				+ severity + ", originalseverity=" + originalseverity;
+		return "ipccustomer::::::" + ipccustomer + ",,,,,, actionable::::::" + actionable
+				+ ",,,,,, customercode::::::" + customercode + ",,,,,, zprocessstate::::::"
+				+ zprocessstate + ",,,,,, cause::::::" + cause + ",,,,,, resolutioncode::::::"
+				+ resolutioncode + ",,,,,, class_::::::" + class_ + ",,,,,, zbnotifystate::::::"
+				+ zbnotifystate + ",,,,,, resourcetype::::::" + resourcetype
+				+ ",,,,,, zgenericactionstate::::::" + zgenericactionstate
+				+ ",,,,,, ibmmanaged::::::" + ibmmanaged + ",,,,,, zhnotifystate::::::"
+				+ zhnotifystate + ",,,,,, lastupdate::::::" + lastupdate + ",,,,,, summary::::::"
+				+ summary + ",,,,,, componenttype::::::" + componenttype + ",,,,,, customer::::::"
+				+ customer + ",,,,,, ostype::::::" + ostype + ",,,,,, poll::::::" + poll
+				+ ",,,,,, expiretime::::::" + expiretime + ",,,,,, processreq::::::" + processreq
+				+ ",,,,,, type::::::" + type + ",,,,,, tasklist::::::" + tasklist
+				+ ",,,,,, ticketstatus::::::" + ticketstatus + ",,,,,, serial::::::" + serial
+				+ ",,,,,, lastoccurrence::::::" + lastoccurrence + ",,,,,, acknowledged::::::"
+				+ acknowledged + ",,,,,, zticketseverity::::::" + zticketseverity
+				+ ",,,,,, zticketstate::::::" + zticketstate + ",,,,,, node::::::" + node
+				+ ",,,,,, resolution::::::" + resolution + ",,,,,, ownergid::::::" + ownergid
+				+ ",,,,,, targetipms::::::" + targetipms + ",,,,,, alertkey::::::" + alertkey
+				+ ",,,,,, suppressescl::::::" + suppressescl + ",,,,,, flash::::::" + flash
+				+ ",,,,,, servername::::::" + servername + ",,,,,, alertgroup::::::" + alertgroup
+				+ ",,,,,, tally::::::" + tally + ",,,,,, serverserial::::::" + serverserial
+				+ ",,,,,, grade::::::" + grade + ",,,,,, owneruid::::::" + owneruid
+				+ ",,,,,, component::::::" + component + ",,,,,, ticketnumber::::::" + ticketnumber
+				+ ",,,,,, firstoccurrence::::::" + firstoccurrence + ", severity::::::"
+				+ severity + ",,,,,, originalseverity::::::" + originalseverity;
 	}
-
 }
