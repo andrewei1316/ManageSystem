@@ -1936,8 +1936,7 @@ footer.main-footer {
   border-top: 1px solid #dddddd;
   font-size: 12px;
   margin-left: -30px;
-  margin-right: -30px;
-  margin-top: 10px;
+  margin-right: -30px; 
   background-color: #eeeeee;
 }
 footer.main-footer:before,
@@ -1983,6 +1982,12 @@ footer.main-footer.footer-type-2 {
   background-color: #252729;
   border-top: 0;
   color: #ffffff;
+}
+footer.main-footer.footer-type-3 {
+  background-color: #252729;
+  border-top: 0;
+  color: #ffffff;
+  margin-bottom:-30px;
 }
 footer.main-footer.footer-type-2 a {
   color: #ffffff;

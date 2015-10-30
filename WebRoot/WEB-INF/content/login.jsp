@@ -15,16 +15,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="" />
-	
-	<title>Xenon - Login</title>
 
-	<link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
-	<link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
 	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/xenon-core.css">
@@ -42,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 		<div class="row">
 		
-			<div style="width: 40.66666667%;margin: auto;position: absolute;top: 50;left: 0;bottom: 0;right: 0;">			
+			<div style="width:35%;margin: auto;position: absolute;top: 50;left: 0;bottom: 0;right: 0;">			
 				<script type="text/javascript">
 					jQuery(document).ready(function($)
 					{
@@ -82,9 +75,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					
 					<div class="login-header">
 						<a class="logo">
-							<img src="assets/images/logo@2x.png" alt="" />			
+							<img src="assets/images/logo@2x.png" />			
 						</a>	
-						<p>Dear user, log in to access the admin area!</p>
 					</div>
 	
 					

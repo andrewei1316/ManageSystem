@@ -15,7 +15,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
 		
 	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -26,7 +25,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="assets/css/custom.css">
 		
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
-
+	<script type="text/javascript">
+        function fun(){       
+            var s=document.form1.file.value; 
+            if(s==""){
+                alert("请选择文件后再上传");
+                document.form1.file.focus();
+                return;
+            }
+            show_loading_bar(100);
+            document.form1.submit();
+        }
+	</script>
   </head>
   
   <body class="page-body">
@@ -204,15 +214,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="panel panel-default">
 			<div class="panel-heading"></div>
 			<div class="panel-body">
-  <form method="POST" enctype="multipart/form-data" action="upload">
+  <form  name="form1" method="POST" enctype="multipart/form-data" action="upload">
   <input type="hidden" name="name" value="import">
-  File to upload: <input type="file" name="file"class="form-control"><br /> 
-  <input type="submit" value="Upload"> Press here to upload the file!
+  File to upload: <input type="file" name="file" class="form-control"><br /> 
+  <input class="btn btn-primary" type="button" onclick='fun()' value="上传">
 </form>
 </div>
 </div>
 
-<footer class="main-footer sticky footer-type-2">
+			<footer class="main-footer sticky footer-type-3">
 				
 				<div class="footer-inner">			
 					<div class="footer-text">
@@ -221,14 +231,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						王子恒、罗睿、和树伟
 					</div>
 					
-					
 					<!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
-					<div class="go-up">
-					
+					<div class="go-up">					
 						<a href="#" rel="go-top">
 							<i class="fa-angle-up"></i>
-						</a>
-						
+						</a>						
 					</div>
 					
 				</div>

@@ -16,12 +16,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="" />
 	
-	<link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
 	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/xenon-core.css">
@@ -30,8 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="assets/css/xenon-skins.css">
 	<link rel="stylesheet" href="assets/css/custom.css">
 		
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	  
+	<script src="assets/js/jquery-1.11.1.min.js"></script>	  
     <script src="resources/JS/jquery.tablednd.js"></script>  
     <style>  
     .tDnD_whileDrag,table.tablednd tbody tr:hover {  
@@ -270,7 +266,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="panel-heading">					
 					<a href="javascript:;" onclick="jQuery('#modal-5').modal('show', {backdrop: 'fade'});" class="btn btn-primary btn-single btn-sm">自定义显示</a>
 
-					<form id = "FuzzySearchForm" name = "FuzzySearchForm" action = "FuzSearchEvent" method = "post" style="margin-left: 220px;width:auto;position: absolute;top:0;left: 0; bottom: 0; right: 0;" >
+					<form id = "FuzzySearchForm" name = "FuzzySearchForm" action = "FuzSearchEvent" method = "post" style="margin-left: 220px;width:500px;position: absolute;top:0;left: 0; bottom: 0; right: 0;" >
 						<input type = "text" id = "FuzzySearchKeys" name = "FuzzySearchKeys"  style="width: 300px; height: 32px;box-shadow: none;border: 1px solid #e4e4e4;" placeholder="关键字可以用空格隔开"/>
 						<input class="btn btn-gray" type = "submit" id = "subFuzzySearch" name = "subFuzzySearch" value = "模糊搜索" style="margin-bottom: 2px;"/>	
 						<button class="btn btn-gray" type = "button" id= "PreSearch" name = "PreSearch" onclick = "showPreSearch()" style="margin-bottom: 2px;">精确搜索</button>
@@ -409,7 +405,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	
 
-
+	<link rel="stylesheet" href="assets/js/uikit/uikit.css">
+	<link rel="stylesheet" href="assets/js/datatables/dataTables.bootstrap.css">
 
 	<!-- Bottom Scripts -->
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -419,12 +416,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="assets/js/xenon-api.js"></script>
 	<script src="assets/js/xenon-toggles.js"></script>
 
-	<link rel="stylesheet" href="assets/js/uikit/uikit.css">
-	<link rel="stylesheet" href="assets/js/datatables/dataTables.bootstrap.css">
 	<script src="assets/js/datatables/jquery.dataTables.min.js"></script>
 	<script src="assets/js/datatables/dataTables.bootstrap.js"></script>	
 	<script src="assets/js/datatables/jquery-migrate-1.2.1.js"></script>
-
 	<script src="assets/js/uikit/js/uikit.min.js"></script>
 	<script src="assets/js/uikit/js/nestable.min.js"></script>
 	

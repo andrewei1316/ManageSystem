@@ -15,17 +15,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 	
   </head>
   
   <body>
   	<script type="text/javascript">
-		alert("导入失败");
-		window.location.href="Events"; 
+		alert("导入失败,请确认导入文件是否正确。");
+		window.location.href="importFile"; 
 	</script>
     
   </body>

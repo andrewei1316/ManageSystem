@@ -12,12 +12,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <title>填写查找字段</title>
 
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">    
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/xenon-core.css">
@@ -286,10 +284,8 @@ function spliPreSearchKeys(){
 		</div>
 	</div>
 	
-	
-	
-
-
+	<link rel="stylesheet" href="assets/js/uikit/uikit.css">
+	<link rel="stylesheet" href="assets/js/datatables/dataTables.bootstrap.css">
 
 	<!-- Bottom Scripts -->
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -299,13 +295,10 @@ function spliPreSearchKeys(){
 	<script src="assets/js/xenon-api.js"></script>
 	<script src="assets/js/xenon-toggles.js"></script>
 
-	
-	<link rel="stylesheet" href="assets/js/uikit/uikit.css">
-	<link rel="stylesheet" href="assets/js/datatables/dataTables.bootstrap.css">
+
 	<script src="assets/js/datatables/jquery.dataTables.min.js"></script>
 	<script src="assets/js/datatables/dataTables.bootstrap.js"></script>	
 	<script src="assets/js/datatables/jquery-migrate-1.2.1.js"></script>
-
 	<script src="assets/js/uikit/js/uikit.min.js"></script>
 	<script src="assets/js/uikit/js/nestable.min.js"></script>
 	<!-- JavaScripts initializations and stuff -->

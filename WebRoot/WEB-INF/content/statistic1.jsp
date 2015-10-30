@@ -18,7 +18,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
 	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/xenon-core.css">
@@ -29,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="assets/css/select2.css">	
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	  
-   <script src="resources/JS/jquery.js" type="text/javascript"></script> 
+   <script type="text/javascript" src="resources/JS/jquery.js"></script> 
    <script type="text/javascript" src="resources/JS/highcharts.js"></script>
    <script type="text/javascript" src="resources/JS/data.js"></script>
    <script type="text/javascript" src="resources/JS/exporting.js"></script>

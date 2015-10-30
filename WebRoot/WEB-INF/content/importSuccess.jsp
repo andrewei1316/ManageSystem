@@ -16,12 +16,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="" />
 	
-	<link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
 	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/xenon-core.css">
@@ -209,7 +206,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</nav>
 			<div class="panel panel-default">
 				<div class="panel-heading">					
-					
+					<h3>导入的数据如下</h3>
 				</div>				
 				<div class="panel-body">	
 				
@@ -284,11 +281,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 	
-	
-	
-
-
-
+	<link rel="stylesheet" href="assets/js/datatables/dataTables.bootstrap.css">
 	<!-- Bottom Scripts -->
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/TweenMax.min.js"></script>
@@ -296,7 +289,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="assets/js/joinable.js"></script>
 	<script src="assets/js/xenon-api.js"></script>
 	<script src="assets/js/xenon-toggles.js"></script>
-	<link rel="stylesheet" href="assets/js/datatables/dataTables.bootstrap.css">
+	
 	<script src="assets/js/datatables/jquery.dataTables.min.js"></script>
 	<script src="assets/js/datatables/dataTables.bootstrap.js"></script>	
 	<script src="assets/js/datatables/jquery-migrate-1.2.1.js"></script>
